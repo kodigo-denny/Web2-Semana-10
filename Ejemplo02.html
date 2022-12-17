@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="assets/js/Carrera.js"></script>
+    <script src="assets/js/Materia.js"></script>
+    <script>
+        //let carrera01 = new Carrera(1, "Sistemas", 6, true)
+        /*carrera01.setNotaMin = 20
+        carrera01.setNotaMin = 7
+
+        carrera01.mostrarDatos()
+        console.log(carrera01.getNotaMin)
+*/
+        //let carrera02 = new Carrera(2, "Software", 7, true)
+       /* carrera02.mostrarDatos()
+
+        Carrera.funcionEstatica()
+*/
+/*
+        Carrera.lista.push(carrera01)
+        Carrera.lista.push(carrera02)
+        Carrera.lista.push(new Carrera(3, "Ingles", 6, true))
+        Carrera.lista[2].setNotaMin = 8
+*/
+        console.log(Carrera.lista)
+
+        let materia01 = new Materia(1, "Programacion I", 4)
+        materia01.mostrarDatos()
+    </script>
+</head>
+<body>
+    <label>ID</label>
+    <input type="text" id="id" />
+
+    <label>Nombre de carrera</label>
+    <input type="text" id="nombre" />
+
+    <label>Nota minima</label>
+    <input type="text" id="notaMin" />
+
+    <button onclick="agregar()">Agregar</button>
+
+    <ul id="listaCarreras">
+
+    </ul>
+    <script>
+        function agregar(){
+            const id = document.querySelector("#id")
+            const nombre = document.querySelector("#nombre")
+            const notaMin = document.querySelector("#notaMin")
+
+            let carrera = new Carrera(id.value, nombre.value, notaMin.value, true)
+            Carrera.lista.push(carrera)
+
+            const listaCarreras = document.querySelector("#listaCarreras")
+
+            Carrera.cargarCarreras(listaCarreras)
+        }
+
+        
+    </script>
+</body>
+</html>
